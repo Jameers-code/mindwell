@@ -1,0 +1,38 @@
+Project_Mindwell_Hackathon$ npx  prisma db pull --force
+(overrides the generated Schema ! )
+
+
+Prisma schema loaded from prisma/schema.prisma
+Environment variables loaded from .env
+Datasource "db": MongoDB database "health" at "cluster0.ehsvt.mongodb.net"
+
+✔ Introspected 6 models and wrote them into prisma/schema.prisma in 905ms
+      
+Run prisma generate to generate Prisma Client.
+
+
+so be carefull ! 
+
+use ! 
+
+
+vit-aiml-56@vitaiml56-ThinkCentre-M70t-Gen-4:~/home/judev/Project_Mindwell_Hackathon$ npx prisma generate
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+
+✔ Generated Prisma Client (v5.21.0) to ./node_modules/@prisma/client in 51ms
+
+Start by importing your Prisma Client (See: http://pris.ly/d/importing-client)
+
+Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+
+vit-aiml-56@vitaiml56-ThinkCentre-M70t-Gen-4:~/home/judev/Project_Mindwell_Hackathon$ npx prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": MongoDB database "health" at "cluster0.ehsvt.mongodb.net"
+
+The database is already in sync with the Prisma schema.
+
+✔ Generated Prisma Client (v5.21.0) to ./node_modules/@prisma/client in 65ms
+
+vit-aiml-56@vitaiml56-ThinkCentre-M70t-Gen-4:~/home/judev/Project_Mindwell_Hackathon$ 

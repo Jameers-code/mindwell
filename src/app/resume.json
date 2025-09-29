@@ -1,0 +1,82 @@
+{
+  "author": {
+    "name": "Jubair Ahmed",
+    "email": "jubair.dev@gmail.com",
+    "city": "Scranton",
+    "country": "India",
+    "timezone": "GMT-5",
+    "avatar_url": "/images/jubair_ahmed.jpg",
+    "current_role": "Full Stack Developer",
+    "current_job": " ",
+    "current_job_url": "https://dundermifflin.com",
+    "linkedin_url": "https://www.linkedin.com/in/imjubairahmed/",
+    "github_url": "https://www.github.com/jubairshaik",
+    "brief_1": "I am dedicated to fostering a vibrant and engaging work environment where creativity and enthusiasm thrive.",
+    "brief_2": "I find purpose in transforming everyday office experiences into memorable moments and ensuring that every team member feels valued and motivated.",
+    "meta_summary": "Experienced office manager with a knack for unconventional leadership and team-building. Let's explore how I can bring creativity and enthusiasm to your organization."
+  },
+
+ 
+
+ 
+    "mentalHealthTestimonials": [
+      {
+        "text": "The beauty of a drama-free life hits different when you finally choose peace over proving points. That shit changed my whole perspective.",
+        "author": "Life Journey, Day 143"
+      },
+      {
+        "text": "Spent years trying to please everyone else until I hit rock bottom. Now I know - you gotta put your oxygen mask on first. That's not selfish, that's survival.",
+        "author": "Recovery Path Notes"
+      },
+      {
+        "text": "Look at you! Out here making it. Figuring shit out as you go. Pushing through fear. Through anxiety. Learning from fuck-ups. It's not pretty, it's not fun, but you're doing it.",
+        "author": "Real Talk Diary"
+      },
+      {
+        "text": "When that inner voice kept saying 'you're not enough' - I finally learned to tell it to shut up. Your emotions are temporary, but that strength you build? That's forever.",
+        "author": "Midnight Thoughts"
+      },
+      {
+        "text": "Stop comparing your journey with somebody else's... Not all flowers bloom at the same time. Some of us are late bloomers and that's okay. Be patient with your process.",
+        "author": "Growth Notes"
+      }
+    ],
+ 
+
+  "work_experience": [
+    {
+      "id": "dundermifflin",
+      "title": "Dunder Mifflin",
+      "description": "A paper company with a focus on excellent customer service and competitive pricing.",
+      "role": "Full Stack Developer",
+      "location": "Scranton, PA",
+      "responsibilities": [
+        "Overseeing daily operations of the Scranton branch",
+        "Implementing company policies and strategies",
+        "Managing and motivating staff to meet sales targets",
+        "Organizing team-building activities and events",
+        "Handling client relations and resolving issues"
+      ],
+      "skills": [
+        "Leadership",
+        "Team Management",
+        "Conflict Resolution",
+        "Sales Strategies",
+        "Public Speaking",
+        "Office Dynamics"
+      ],
+      "image": "/images/portfolio/dundermifflin-office.webp",
+      "imagePosition": "center",
+      "imageAlt": "Dunder Mifflin office space",
+      "href": "https://dundermifflin.com"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Arts",
+      "major": "Business Administration",
+      "university": "University of Scranton",
+      "graduation": "1997"
+    }
+  ]
+}
