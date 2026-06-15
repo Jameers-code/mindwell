@@ -3,12 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider     = "mongodb"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
- 
-
 
 enum Role {
   user
@@ -22,22 +19,19 @@ enum Frequency {
   RARELY
 }
 
- 
-
 enum SymptomName {
-    ANXIETY
-    STRESS
-    DEPRESSION
-    FATIGUE
-    INSOMNIA
-    IRRITABILITY
-    MOOD_SWINGS
-    LACK_OF_MOTIVATION
-    DIFFICULTY_CONCENTRATING
-    SOCIAL_WITHDRAWAL
-    RESTLESSNESS
+  ANXIETY
+  STRESS
+  DEPRESSION
+  FATIGUE
+  INSOMNIA
+  IRRITABILITY
+  MOOD_SWINGS
+  LACK_OF_MOTIVATION
+  DIFFICULTY_CONCENTRATING
+  SOCIAL_WITHDRAWAL
+  RESTLESSNESS
 }
-
 
 enum Adherence {
   ALWAYS
@@ -70,9 +64,8 @@ enum Stress {
   EXTREMELY
 }
 
-
 model User {
-  id         String  @id @map("_id")
+  id         String  @id @default(cuid())
   age        BigInt?
   bloodGroup String?
   clerkId    String  @unique
@@ -96,24 +89,23 @@ model User {
   messages       Message[]
   activities     Activity[]
 }
- 
 
-// step 2
 model Symptom {
-  id        String      @id @default(cuid()) @map("_id")
+  id        String      @id @default(cuid())
   userId    String
-  name      SymptomName // here i want if if the user selects other then the predefined symptoms then he can enter his own symptom
+  name      SymptomName
   intensity Int // Intensity level from 1 to 10
   frequency Frequency //how often the symptom occurs
   loggedAt  DateTime?   @default(now()) // When the symptom was logged
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
- 
 
-// step 3
+  @@index([userId])
+  @@index([loggedAt])
+}
+
 model Medication {
-  id        String    @id @default(cuid()) @map("_id")
+  id        String    @id @default(cuid())
   userId    String
   name      String // Name of the medication
   dosage    String // Dosage of the medication
@@ -123,57 +115,61 @@ model Medication {
   startDate DateTime? // When the medication was started
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
-
- 
-
-// step 4
 model MentalWellness {
-  id        String  @id @default(cuid()) @map("_id")
+  id        String  @id @default(cuid())
   userId    String
   mood      Mood
   happiness Int
   sleep     Sleep
   stress    Stress
   anxiety   String?
+  createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt])
 }
 
-//chat ! 
 model Message {
-  id        String   @id @default(cuid()) @map("_id")
+  id        String   @id @default(cuid())
   role      Role
   userId    String
   content   String
   createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt])
 }
 
- 
 model Activity {
-  id          String   @id @default(cuid()) @map("_id")
-  userId      String   @map(name: "user_id")
+  id          String   @id @default(cuid())
+  userId      String
   name        String
   description String? // Optional description for the activity
-  color_code  String   @map(name: "color_code") // Color code for the activity
-  createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @updatedAt @map(name: "updated_at")
+  color_code  String // Color code for the activity
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   activityLogs ActivityLog[] // Relation to ActivityLog
 
-  @@map(name: "activities")
+  @@index([userId])
 }
 
 model ActivityLog {
-  id         String   @id @default(cuid()) @map("_id")
-  activityId String   @map(name: "activity_id")
+  id         String   @id @default(cuid())
+  activityId String
   date       DateTime @default(now()) // Date the activity was logged
   count      Int      @default(1) // Count of activity instances
   activity   Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
 
-  @@map(name: "activity_log")
+  @@index([activityId])
+  @@index([date])
 }
