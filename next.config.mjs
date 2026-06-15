@@ -10,7 +10,6 @@ const nextConfig = {
         hostname: "i.ytimg.com",
         protocol: "https",
       },
-
       {
         hostname: "img.clerk.com",
         protocol: "https",
@@ -28,9 +27,6 @@ const nextConfig = {
         protocol: "https",
       },
     ],
-  },
-  typescript: {
-    ignoreBuildErrors: true,
   },
 };
 
