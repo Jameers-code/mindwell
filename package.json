@@ -2,6 +2,8 @@
   "name": "MindWell",
   "version": "0.1.0",
   "private": true,
+  "author": "Jameers-code",
+  "description": "AI-powered mental health web app built with Next.js, Node.js, PostgreSQL, Prisma, and AWS. Integrates LLM features for intelligent assistance.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
